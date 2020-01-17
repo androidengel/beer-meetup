@@ -3,7 +3,6 @@ import { Link, withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import NavLink from './NavLink';
 import NavStyles from './styles/NavStyles'
-import Nav from './Nav';
 
 const StyledHeader = styled.header`
   display: block;
@@ -52,7 +51,6 @@ class Header extends React.Component {
             return <NavLink key={index} slug={key} active={this.state.navLinks[key]} activateLink={this.activateLink} label={label}/>
           })}
         </NavStyles>
-        {/* <Nav path={this.state.activeRoute} activate={this.handleClick}/> */}
       </StyledHeader>
     );
   }
