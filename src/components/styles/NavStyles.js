@@ -19,7 +19,7 @@ const NavStyles = styled.ul`
     margin: 0 1rem;
     text-transform: uppercase;
     letter-spacing: 0.5rem;
-    transition: all .2s ease;
+    transition: all .1s ease;
     &:hover {
       color: red;
       border-bottom: 2px solid red;

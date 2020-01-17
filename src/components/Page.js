@@ -34,13 +34,13 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-function Page(children) {
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <PageContent />
-    </ThemeProvider>
-  );
-}
+const Page = ({ children }) => (
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <PageContent>
+      {children}
+    </PageContent>
+  </ThemeProvider>
+);
 
 export default Page;

@@ -36,9 +36,8 @@ class Header extends React.Component {
     this.setState({ navLinks: freshNavs })
   }
 
-  deactivateLink = () => {
-    const deactivatedLinks = this.refreshNavs();
-    this.setState({ navLinks: deactivatedLinks })
+  deactivateLinks = () => {
+    this.setState({ navLinks: this.refreshNavs() })
   }
     
   activateLink = (slug) => {
@@ -50,7 +49,7 @@ class Header extends React.Component {
   render() {
     return (
       <StyledHeader>
-        <Logo><Link to="/" onClick={this.deactivateLink}>BEER MEETUP</Link></Logo>
+        <Logo><Link to="/" onClick={this.deactivateLinks}>BEER MEETUP</Link></Logo>
         <NavStyles>
           {Object.keys(this.state.navLinks).map((key, index) => {
             const label = `${key.substr(0,1).toUpperCase()}${key.substr(1)}`;
