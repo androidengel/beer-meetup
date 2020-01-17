@@ -16,7 +16,6 @@ const Logo = styled.h1`
 
 class Header extends React.Component {
   state = {
-    // activeRoute: this.params.location.pathname
     logo: 0,
     navLinks: {
       beers: 0,
@@ -26,25 +25,32 @@ class Header extends React.Component {
     }
   }
 
+  refreshNavs = () => ({ beers: 0, meetings: 0, members: 0, account: 0 });
+
+  componentDidMount = () => {
+    // use current path to determine if any nav links should be highlighted
+    const currentRoute = this.props.location.pathname;
+    const activeLink = currentRoute.replace('/','');
+    const freshNavs = this.refreshNavs();
+    freshNavs[activeLink] = 1;
+    this.setState({ navLinks: freshNavs })
+  }
+
   deactivateLink = () => {
-    const deactivatedLinks = { beers: 0, meetings: 0, members: 0, account: 0 };
-    this.setState( {
-      navLinks: deactivatedLinks
-    })
+    const deactivatedLinks = this.refreshNavs();
+    this.setState({ navLinks: deactivatedLinks })
   }
     
   activateLink = (slug) => {
-    const updatedLinks = { beers: 0, meetings: 0, members: 0, account: 0 };
+    const updatedLinks = this.refreshNavs();
     updatedLinks[slug] = 1;
-    this.setState({
-      navLinks: updatedLinks
-    })
+    this.setState({ navLinks: updatedLinks })
   }
 
   render() {
     return (
       <StyledHeader>
-        <Logo><Link to="/">BEER MEETUP</Link></Logo>
+        <Logo><Link to="/" onClick={this.deactivateLink}>BEER MEETUP</Link></Logo>
         <NavStyles>
           {Object.keys(this.state.navLinks).map((key, index) => {
             const label = `${key.substr(0,1).toUpperCase()}${key.substr(1)}`;
