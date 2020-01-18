@@ -14,7 +14,7 @@ const theme = {
 const PageContent = styled.div`
   max-width: ${(props) => props.theme.maxWidth};
   margin: 0 auto;
-  padding: 2rem;
+  padding: 10rem 2rem 2rem 2rem;
   text-align: center;
 `;
 

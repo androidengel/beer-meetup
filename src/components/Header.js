@@ -7,10 +7,13 @@ import NavStyles from './styles/NavStyles'
 const StyledHeader = styled.header`
   display: block;
   text-align: center;
+  position: fixed;
+  background: black;
+  width: 100%;
 `;
 
 const Logo = styled.h1`
-  margin: auto 1.5rem;
+  margin: auto 0;
   font-size: 3.5rem;
 `;
 
