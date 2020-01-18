@@ -1,10 +1,12 @@
 import React from 'react';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
+import bg from '../images/bg_home.jpg';
 
 const theme = {
   black: '#333',
   red: '#eb1515',
   lightGray: '#cccaca',
+  yellow: '#ffcd29',
   offWhite: '#ededed',
   maxWidth: '1000px',
 };
@@ -13,14 +15,16 @@ const PageContent = styled.div`
   max-width: ${(props) => props.theme.maxWidth};
   margin: 0 auto;
   padding: 2rem;
+  text-align: center;
 `;
 
 const GlobalStyle = createGlobalStyle`
   html {
     font-size: 10px;
     box-sizing: border-box;
-    background-color: ${(props) => props.theme.lightGray};
-    color: ${(props) => props.theme.black};
+    background: black url(${bg}) no-repeat fixed center top;
+    min-height: 700px
+    color: ${(props) => props.theme.offWhite};
   }
   body {
     padding: 0,
@@ -30,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
   }
   a {
     text-decoration: none;
-    color: ${(props) => props.theme.black};
+    color: ${(props) => props.theme.offWhite};
   }
 `;
 

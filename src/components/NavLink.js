@@ -29,6 +29,6 @@ class NavLink extends Component {
 export default NavLink;
 
 const LinkStyle = styled(Link)`
-  color: ${props => (props.active ? `red` : `#333`)};
-  border-bottom: ${props => (props.active ? `2px solid red` : `none`)};
+  color: ${props => (props.active ? `#ffcd29` : `#cccaca`)};
+  border-bottom: ${props => (props.active ? `2px solid #ffcd29` : `2px solid black`)};
 `;

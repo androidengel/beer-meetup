@@ -21,8 +21,8 @@ const NavStyles = styled.ul`
     letter-spacing: 0.5rem;
     transition: all .1s ease;
     &:hover {
-      color: red;
-      border-bottom: 2px solid red;
+      color: #ffcd29;
+      border-bottom: 2px solid #ffcd29;
     }
     @media (max-width: 700px) {
       font-size: 1rem;
