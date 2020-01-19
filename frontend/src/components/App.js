@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   callBackend = () => {
-    fetch('http://localhost:8000/test')
+    fetch('http://localhost:7777/test')
       .then(res => res.text())
       .then(res => this.setState({backendResponse: res}))
   }
