@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
+const passportLocalMongoose = require('passport-local-mongoose');
 
 const { Schema } = mongoose;
 mongoose.Promise = global.Promise;
@@ -25,5 +26,7 @@ const memberSchema = new Schema({
     required: 'Please supply an email address.',
   },
 });
+
+memberSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
 
 module.exports = mongoose.model('Member', memberSchema);
