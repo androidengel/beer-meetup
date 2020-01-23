@@ -25,6 +25,12 @@ const memberSchema = new Schema({
     validate: [validator.isEmail, 'Invalid email address'],
     required: 'Please supply an email address.',
   },
+  authority: {
+    type: Number,
+    default: 2,
+    min: 1,
+    max: 3,
+  },
 });
 
 memberSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
