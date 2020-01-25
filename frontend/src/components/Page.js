@@ -36,6 +36,9 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: ${(props) => props.theme.offWhite};
   }
+  form {
+    
+  }
 `;
 
 const Page = ({ children }) => (

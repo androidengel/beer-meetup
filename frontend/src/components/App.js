@@ -9,6 +9,7 @@ import beers from '../pages/beers';
 import meetings from '../pages/meetings';
 import members from '../pages/members';
 import account from '../pages/account';
+import RequestMember from './RequestMember';
 
 class App extends Component {
   state = {
@@ -36,6 +37,7 @@ class App extends Component {
             <Route exact path="/beers" component={beers} />
             <Route exact path="/meetings" component={meetings} />
             <Route exact path="/members" component={members} />
+            <Route exact path="/members/request" component={RequestMember} />
             <Route exact path="/account" component={account} />
           </Switch>
         </Page>

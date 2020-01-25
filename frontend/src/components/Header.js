@@ -33,7 +33,7 @@ class Header extends React.Component {
   componentDidMount = () => {
     // use current path to determine if any nav links should be highlighted
     const currentRoute = this.props.location.pathname;
-    const activeLink = currentRoute.replace('/','');
+    const activeLink = currentRoute.split('/')[1]; // isolates word after first '/' in url
     const freshNavs = this.refreshNavs();
     freshNavs[activeLink] = 1;
     this.setState({ navLinks: freshNavs })
