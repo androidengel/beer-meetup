@@ -29,7 +29,18 @@ const GlobalStyles = createGlobalStyle`
     color: ${(props) => props.theme.offWhite};
   }
   form {
-    
+    margin: 0 auto;
+    width: 70%;
+    text-align: left;
+  }
+  label {
+    font-size: 1.6rem;
+    letter-spacing: 1.5px;
+  }
+  input {
+    width: 100%;
+    padding: .5rem;
+    margin: 1rem auto;
   }
 `;
 
