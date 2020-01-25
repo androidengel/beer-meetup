@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import beerImage from '../images/bg_home.jpg';
 
 const HomeText = styled.div`
   text-align: left;
