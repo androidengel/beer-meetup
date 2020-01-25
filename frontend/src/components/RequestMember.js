@@ -1,7 +1,7 @@
 import React from 'react';
 
 const RequestMember = () => (
-  <form method="POST">
+  <form>
     <label htmlFor="name">
       Name
       <input type="text" id="name" name="name" required />

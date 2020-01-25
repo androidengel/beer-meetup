@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   BrowserRouter, Route, Switch,
 } from 'react-router-dom';
+import styled from 'styled-components';
 import Header from './Header';
 import Page from './Page';
 import home from '../pages/home';
@@ -10,6 +11,10 @@ import meetings from '../pages/meetings';
 import members from '../pages/members';
 import account from '../pages/account';
 import RequestMember from './RequestMember';
+
+const HeaderWrapper = styled.div`
+  height: 8rem;
+`;
 
 class App extends Component {
   state = {
@@ -30,7 +35,9 @@ class App extends Component {
     return (
       <BrowserRouter>
         {/* <p>{this.state.backendResponse}</p> */}
-        <Header />
+        <HeaderWrapper>
+          <Header />
+        </HeaderWrapper>
         <Page>
           <Switch>
             <Route exact path="/" component={home} />

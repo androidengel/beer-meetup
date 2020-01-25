@@ -9,7 +9,7 @@ const HomeText = styled.div`
 const GozillaTitle = styled.h1`
   font-size: 14rem;
   line-height: 15rem;
-  margin: 5rem 0;
+  margin: 0;
   @media (max-width: 700px) {
     font-size: 9rem;
     line-height: 10rem;
