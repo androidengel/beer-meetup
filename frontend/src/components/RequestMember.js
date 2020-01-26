@@ -5,11 +5,11 @@ const RequestMember = () => (
     <h2>New Member Request</h2>
     <form className="card">
       <label htmlFor="name">
-        Name
+        New Member Name
         <input type="text" id="name" name="name" required />
       </label>
       <label htmlFor="email">
-        Email
+        New Member Email
         <input type="email" id="email" name="email" />
       </label>
       <label htmlFor="description">

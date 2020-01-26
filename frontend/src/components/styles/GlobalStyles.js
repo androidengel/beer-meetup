@@ -62,7 +62,7 @@ const GlobalStyles = createGlobalStyle`
     padding: 5rem;
     border-radius: 1%;
     border: 1px solid #383a3d;
-    box-shadow: 0 12px 10px rgba(0,0,0,0.9);
+    box-shadow: 12px 12px 10px rgba(0,0,0,0.9);
     @media (max-width: 700px) {
       padding: 3rem;
     } 
@@ -72,7 +72,10 @@ const GlobalStyles = createGlobalStyle`
     color: ${(props) => props.theme.black};
     font-weight: 900;
     width: auto;
+    min-width: 70px;
+    margin: 0 1rem;
     border: 0;
+    border-radius: 3%;
     &:hover {
       background: #d6ab1c;
       cursor: pointer;

@@ -8,7 +8,7 @@ import Page from './Page';
 import home from '../pages/home';
 import beers from '../pages/beers';
 import meetings from '../pages/meetings';
-import members from '../pages/members';
+import MembersPage from '../pages/MembersPage';
 import account from '../pages/account';
 import RequestMember from './RequestMember';
 
@@ -43,8 +43,8 @@ class App extends Component {
             <Route exact path="/" component={home} />
             <Route exact path="/beers" component={beers} />
             <Route exact path="/meetings" component={meetings} />
-            <Route exact path="/members" component={members} />
-            <Route exact path="/members/request" component={RequestMember} />
+            <Route exact path="/members" component={MembersPage} />
+            {/* <Route exact path="/members/request" component={RequestMember} /> */}
             <Route exact path="/account" component={account} />
           </Switch>
         </Page>
