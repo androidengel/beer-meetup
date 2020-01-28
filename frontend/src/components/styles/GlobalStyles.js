@@ -35,7 +35,7 @@ const GlobalStyles = createGlobalStyle`
     color: ${(props) => props.theme.offWhite};
   }
   form {
-    margin: 0 auto;
+    margin: 2rem auto;
     width: 70%;
     text-align: left;
 
@@ -76,6 +76,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0 1rem;
     border: 0;
     border-radius: 3%;
+    padding: .5rem;
     &:hover {
       background: #d6ab1c;
       cursor: pointer;
