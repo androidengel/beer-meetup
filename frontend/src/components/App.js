@@ -5,12 +5,11 @@ import {
 import styled from 'styled-components';
 import Header from './Header';
 import Page from './Page';
-import home from '../pages/home';
-import beers from '../pages/beers';
-import meetings from '../pages/meetings';
+import HomePage from '../pages/HomePage';
+import BeersPage from '../pages/BeersPage';
+import MeetingsPage from '../pages/MeetingsPage';
 import MembersPage from '../pages/MembersPage';
-import account from '../pages/account';
-import RequestMember from './RequestMember';
+import AccountPage from '../pages/AccountPage';
 
 const HeaderWrapper = styled.div`
   height: 8rem;
@@ -40,11 +39,11 @@ class App extends Component {
         </HeaderWrapper>
         <Page>
           <Switch>
-            <Route exact path="/" component={home} />
-            <Route exact path="/beers" component={beers} />
-            <Route exact path="/meetings" component={meetings} />
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/beers" component={BeersPage} />
+            <Route exact path="/meetings" component={MeetingsPage} />
             <Route path="/members" component={MembersPage} />
-\            <Route exact path="/account" component={account} />
+\            <Route exact path="/account" component={AccountPage} />
           </Switch>
         </Page>
       </BrowserRouter>

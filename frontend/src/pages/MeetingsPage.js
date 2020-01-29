@@ -1,9 +1,9 @@
 import React from 'react';
 
-const meetings = () => (
+const MeetingsPage = () => (
   <div>
     <h1>MEETINGS</h1>
   </div>
 );
 
-export default meetings;
+export default MeetingsPage;

@@ -73,7 +73,7 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 900;
     width: auto;
     min-width: 70px;
-    margin: 0 1rem;
+    margin: 0 2rem 0 0 ;
     border: 0;
     border-radius: 3%;
     padding: .5rem;

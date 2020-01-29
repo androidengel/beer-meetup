@@ -36,7 +36,7 @@ const SubTitle = styled.h6`
   }
 `;
 
-function home() {
+function HomePage() {
   return (
     <HomeText>
       <GozillaTitle>
@@ -49,4 +49,4 @@ function home() {
   );
 }
 
-export default home;
+export default HomePage;
