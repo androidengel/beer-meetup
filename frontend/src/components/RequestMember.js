@@ -1,12 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const WholeForm = styled.div`
-  margin: 2rem auto;
-`;
-
 const RequestMember = () => (
-  <WholeForm>
+  <div className="whole-form">
     <h2>New Member Request</h2>
     <form className="card">
       <label htmlFor="name">
@@ -23,7 +19,7 @@ const RequestMember = () => (
       </label>
       <input type="submit" value="Submit Request" className="button" />
     </form>
-  </WholeForm>
+  </div>
 );
 
 export default RequestMember;

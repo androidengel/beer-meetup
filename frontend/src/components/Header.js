@@ -35,8 +35,10 @@ class Header extends React.Component {
     const currentRoute = this.props.location.pathname;
     const activeLink = currentRoute.split('/')[1]; // isolates word after first '/' in url
     const freshNavs = this.refreshNavs();
-    freshNavs[activeLink] = 1;
-    this.setState({ navLinks: freshNavs })
+    if(freshNavs.hasOwnProperty(activeLink)) {
+      freshNavs[activeLink] = 1;
+      this.setState({ navLinks: freshNavs })
+    }
   }
 
   deactivateLinks = () => {

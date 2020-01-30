@@ -82,6 +82,9 @@ const GlobalStyles = createGlobalStyle`
       cursor: pointer;
     }
   }
+  .whole-form {
+    margin: 2rem auto;
+  }
 `;
 
 export { GlobalStyles, theme };

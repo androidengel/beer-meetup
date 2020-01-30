@@ -10,6 +10,7 @@ import BeersPage from '../pages/BeersPage';
 import MeetingsPage from '../pages/MeetingsPage';
 import MembersPage from '../pages/MembersPage';
 import AccountPage from '../pages/AccountPage';
+import SignupPage from '../pages/SignupPage';
 
 const HeaderWrapper = styled.div`
   height: 8rem;
@@ -44,6 +45,7 @@ class App extends Component {
             <Route exact path="/meetings" component={MeetingsPage} />
             <Route path="/members" component={MembersPage} />
             <Route exact path="/account" component={AccountPage} />
+            <Route path="/signup/:token" component={SignupPage} />
           </Switch>
         </Page>
       </BrowserRouter>
