@@ -21,15 +21,15 @@ class App extends Component {
     backendResponse: '',
   }
 
-  callBackend = () => {
-    fetch('http://localhost:7777/test')
-      .then(res => res.text())
-      .then(res => this.setState({backendResponse: res}))
-  }
+  // callBackend = () => {
+  //   fetch('http://localhost:7777/test')
+  //     .then(res => res.text())
+  //     .then(res => this.setState({backendResponse: res}))
+  // }
 
-  componentDidMount() {
-    this.callBackend();
-  }
+  // componentDidMount() {
+  //   this.callBackend();
+  // }
 
   render() {
     return (
