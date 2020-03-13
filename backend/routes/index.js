@@ -7,6 +7,8 @@ const memberController = require('../controllers/memberController');
 router.get('/', (req, res) => { res.send('It\'s working!!!'); });
 router.get('/beers', (req, res, next) => { res.send('List of Beers!!'); });
 
-router.post('/members/add', memberController.addMember);
+router.post('/members/add', memberController.requestMember);
+
+router.post('/signup/1234', memberController.validateRegister);
 
 module.exports = router;
