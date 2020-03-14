@@ -50,6 +50,8 @@ const GlobalStyles = createGlobalStyle`
     width: 100%;
     padding: .5rem;
     margin: 1rem auto;
+    border-radius: 4px;
+    border-style: none;
   }
   textarea {
     height: 9rem;
@@ -72,9 +74,9 @@ const GlobalStyles = createGlobalStyle`
     background: ${(props) => props.theme.yellow};
     color: ${(props) => props.theme.black};
     font-weight: 900;
-    width: 100%;
+    width: auto;
     min-width: 70px;
-    margin: 2rem 2rem 2rem 0 ;
+    margin: 0 2rem 0 0 ;
     border: 0;
     border-radius: 3%;
     padding: 1rem;
@@ -85,6 +87,10 @@ const GlobalStyles = createGlobalStyle`
   }
   .whole-form {
     margin: 2rem auto;
+    & .button {
+      width: 100%;
+      margin: 2rem 2rem 2rem 0;
+    }
   }
 `;
 
