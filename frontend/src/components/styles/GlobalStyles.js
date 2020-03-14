@@ -58,7 +58,8 @@ const GlobalStyles = createGlobalStyle`
     font-family: arial;
   }
   .card {
-    background: #252628;
+    max-width: 400px;
+    background: #252628cc;
     padding: 5rem;
     border-radius: 1%;
     border: 1px solid #383a3d;
@@ -71,12 +72,12 @@ const GlobalStyles = createGlobalStyle`
     background: ${(props) => props.theme.yellow};
     color: ${(props) => props.theme.black};
     font-weight: 900;
-    width: auto;
+    width: 100%;
     min-width: 70px;
-    margin: 0 2rem 0 0 ;
+    margin: 2rem 2rem 2rem 0 ;
     border: 0;
     border-radius: 3%;
-    padding: .5rem;
+    padding: 1rem;
     &:hover {
       background: #d6ab1c;
       cursor: pointer;
