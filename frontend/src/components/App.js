@@ -9,6 +9,7 @@ import HomePage from '../pages/HomePage';
 import BeersPage from '../pages/BeersPage';
 import MeetingsPage from '../pages/MeetingsPage';
 import MembersPage from '../pages/MembersPage';
+import SigninPage from '../pages/SigninPage';
 import AccountPage from '../pages/AccountPage';
 import SignupPage from '../pages/SignupPage';
 
@@ -44,6 +45,7 @@ class App extends Component {
             <Route exact path="/beers" component={BeersPage} />
             <Route exact path="/meetings" component={MeetingsPage} />
             <Route path="/members" component={MembersPage} />
+            <Route exact path="/signin" component={SigninPage} />
             <Route exact path="/account" component={AccountPage} />
             <Route path="/signup/:token" component={SignupPage} />
           </Switch>
