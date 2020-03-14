@@ -78,7 +78,6 @@ const GlobalStyles = createGlobalStyle`
     min-width: 70px;
     margin: 0 2rem 0 0 ;
     border: 0;
-    border-radius: 3%;
     padding: 1rem;
     &:hover {
       background: #d6ab1c;
