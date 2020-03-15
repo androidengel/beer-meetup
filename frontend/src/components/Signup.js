@@ -23,13 +23,13 @@ const Signup = () => {
     <div className="whole-form">
       <h2>New Member Signup</h2>
       <form className="card" onSubmit={submitForm}>
-        <label htmlFor="first-name">
+        <label htmlFor="fname">
             First Name
-          <input type="text" name="first-name" onChange={handleChange} required />
+          <input type="text" name="fname" onChange={handleChange} required />
         </label>
         <label htmlFor="last-name">
             Last Name
-          <input type="text" name="last-name" onChange={handleChange} required />
+          <input type="text" name="lname" onChange={handleChange} required />
         </label>
         <label htmlFor="email">
             Email
@@ -41,7 +41,7 @@ const Signup = () => {
         </label>
         <label htmlFor="password-confirm">
             Confirm Password
-          <input type="password" name="password-confirm" onChange={handleChange} required />
+          <input type="password" name="pwconfirm" onChange={handleChange} required />
         </label>
         <input type="submit" value="Signup" className="button" />
       </form>
