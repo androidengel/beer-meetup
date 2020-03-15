@@ -1,6 +1,5 @@
 const createError = require('http-errors');
 const express = require('express');
-const expressValidator = require('express-validator');
 const expressSession = require('express-session');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -19,7 +18,6 @@ const app = express();
 app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
-app.use(expressValidator()); // used heavily on memberController.validateSignup
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
