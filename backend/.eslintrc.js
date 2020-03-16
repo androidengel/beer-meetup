@@ -18,5 +18,6 @@ module.exports = {
    "linebreak-style": 0,
    "no-unused-vars": 1,
    "newline-per-chained-call": 0,
+   "object-curly-newline": 0,
   },
 };
