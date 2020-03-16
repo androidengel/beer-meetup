@@ -1,22 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import axios from 'axios';
+import useForm from '../lib/useForm';
 
 
 const Signup = () => {
-  const [inputs, setInputs] = useState({});
+  const { inputs, handleChange } = useForm({
+    fname: '',
+    lname: '',
+    email: '',
+    password: '',
+    pwconfirm: '',
+  });
 
   const submitForm = (e) => {
     e.preventDefault();
     axios.post('http://localhost:7777/signup/1234', inputs)
       .then((res) => console.log(res.data));
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setInputs({
-      ...inputs,
-      [name]: value,
-    });
   };
 
   return (
@@ -25,23 +24,23 @@ const Signup = () => {
       <form className="card" onSubmit={submitForm}>
         <label htmlFor="fname">
             First Name
-          <input type="text" name="fname" onChange={handleChange} required />
+          <input type="text" name="fname" value={inputs.fname} onChange={handleChange} required />
         </label>
         <label htmlFor="last-name">
             Last Name
-          <input type="text" name="lname" onChange={handleChange} required />
+          <input type="text" name="lname" value={inputs.lname} onChange={handleChange} required />
         </label>
         <label htmlFor="email">
             Email
-          <input type="email" name="email" onChange={handleChange} required />
+          <input type="email" name="email" value={inputs.email} onChange={handleChange} required />
         </label>
         <label htmlFor="password">
             Password
-          <input type="password" name="password" onChange={handleChange} required />
+          <input type="password" name="password" value={inputs.password} onChange={handleChange} required />
         </label>
         <label htmlFor="password-confirm">
             Confirm Password
-          <input type="password" name="pwconfirm" onChange={handleChange} required />
+          <input type="password" name="pwconfirm" value={inputs.pwconfirm} onChange={handleChange} required />
         </label>
         <input type="submit" value="Signup" className="button" />
       </form>
