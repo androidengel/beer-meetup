@@ -23,13 +23,9 @@ exports.signupRules = () => [
   }),
 ];
 
-exports.registerSignup = (req, res, next) => {
-  // const validation = validationResult(req);
-  // const { errors } = validation;
-  // if (errors.length) {
-  //   console.log(errors);
-  // } else {
-  //   console.log('No Errors!');
-  // }
-  console.log('No Errors!');
+exports.registerSignup = async (req, res, next) => {
+  const { fname, lname, email, password } = req.body;
+  const member = new Member({ firstName: fname, lastName: lname, email });
+  await member.register(member, password); // method from passport-local-mongoose plugin
+  next(); // pass to authcontroller to login
 };
