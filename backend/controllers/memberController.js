@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { check, validationResult, body } = require('express-validator');
+const { body } = require('express-validator');
 
 const Member = mongoose.model('Member');
 
@@ -27,5 +27,5 @@ exports.registerSignup = async (req, res, next) => {
   const { fname, lname, email, password } = req.body;
   const member = new Member({ firstName: fname, lastName: lname, email });
   await Member.register(member, password); // method from passport-local-mongoose plugin
-  // next(); // pass to authcontroller to login
+  next(); // pass to authcontroller to login
 };

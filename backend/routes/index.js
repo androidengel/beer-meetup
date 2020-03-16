@@ -3,6 +3,7 @@ const { validationResult } = require('express-validator');
 
 const router = express.Router();
 const memberController = require('../controllers/memberController');
+const authController = require('../controllers/authController');
 const { catchErrors } = require('../handlers/errorHandlers');
 
 // validation middleware used after applying validation rules in each controller
@@ -26,6 +27,7 @@ router.post('/members/add', memberController.requestMember);
 router.post('/signup/1234',
   memberController.signupRules(),
   validate,
-  catchErrors(memberController.registerSignup));
+  catchErrors(memberController.registerSignup),
+  authController.login);
 
 module.exports = router;
