@@ -1,11 +1,13 @@
 const createError = require('http-errors');
 const express = require('express');
 const expressSession = require('express-session');
+const passport = require('passport');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
+require('./handlers/passport');
 
 const router = require('./routes/index');
 
@@ -22,7 +24,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
+app.use(passport.session());
 
+// after all middleware, handle routes
 app.use('/', router);
 
 // catch 404 and forward to error handler
@@ -38,7 +43,7 @@ app.use((err, req, res, next) => {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.send(res.locals.message);
 });
 
 module.exports = app;

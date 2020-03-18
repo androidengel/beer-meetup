@@ -1,9 +1,10 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import useForm from '../lib/useForm';
 
 
-const Signup = () => {
+const Signup = (props) => {
   const { inputs, handleChange } = useForm({
     fname: '',
     lname: '',
@@ -15,7 +16,7 @@ const Signup = () => {
   const submitForm = (e) => {
     e.preventDefault();
     axios.post('http://localhost:7777/signup/1234', inputs)
-      .then((res) => console.log(res.data));
+      .then((res) => props.history.push('/')); // TODO add if/then to push to success vs failure
   };
 
   return (
