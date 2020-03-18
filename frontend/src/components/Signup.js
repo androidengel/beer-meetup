@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import useForm from '../lib/useForm';
 
@@ -16,7 +16,15 @@ const Signup = (props) => {
   const submitForm = (e) => {
     e.preventDefault();
     axios.post('http://localhost:7777/signup/1234', inputs)
-      .then((res) => props.history.push('/')); // TODO add if/then to push to success vs failure
+      .then((res) => {
+        if (res.status === 200) {
+          props.history.push('/beers'); // successful login
+          // TODO add success message
+        } else {
+          props.history.push('/signin');
+          // TODO add failure message
+        }
+      });
   };
 
   return (
@@ -47,6 +55,10 @@ const Signup = (props) => {
       </form>
     </div>
   );
+};
+
+Signup.propTypes = {
+  history: PropTypes.object.isRequired,
 };
 
 export default Signup;
