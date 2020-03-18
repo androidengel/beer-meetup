@@ -4,7 +4,7 @@ import axios from 'axios';
 import useForm from '../lib/useForm';
 
 
-const Signup = (props) => {
+const Register = (props) => {
   const { inputs, handleChange } = useForm({
     fname: '',
     lname: '',
@@ -15,7 +15,7 @@ const Signup = (props) => {
 
   const submitForm = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:7777/signup/1234', inputs)
+    axios.post('http://localhost:7777/register/1234', inputs)
       .then((res) => {
         if (res.status === 200) {
           props.history.push('/beers'); // successful login
@@ -29,7 +29,7 @@ const Signup = (props) => {
 
   return (
     <div className="whole-form">
-      <h2>New Member Signup</h2>
+      <h2>New Member Registration</h2>
       <form className="card" onSubmit={submitForm}>
         <label htmlFor="fname">
             First Name
@@ -51,14 +51,14 @@ const Signup = (props) => {
             Confirm Password
           <input type="password" name="pwconfirm" value={inputs.pwconfirm} onChange={handleChange} required />
         </label>
-        <input type="submit" value="Signup" className="button" />
+        <input type="submit" value="Sign Up!" className="button" />
       </form>
     </div>
   );
 };
 
-Signup.propTypes = {
+Register.propTypes = {
   history: PropTypes.object.isRequired,
 };
 
-export default Signup;
+export default Register;

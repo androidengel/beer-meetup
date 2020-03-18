@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Signup from '../components/Signup';
+import Register from '../components/Register';
 
-const SignupPage = (props) => {
+const RegisterPage = (props) => {
   const { history } = props;
   return (
     <div>
-      <Signup history={history} />
+      <Register history={history} />
     </div>
   );
 };
 
-SignupPage.propTypes = {
+RegisterPage.propTypes = {
   history: PropTypes.object.isRequired,
 };
 
-export default SignupPage;
+export default RegisterPage;

@@ -8,7 +8,7 @@ exports.requestMember = (req, res) => {
 };
 
 // validation rules for first time sign up
-exports.signupRules = () => [
+exports.registrationRules = () => [
   body('fname', 'First name is required').not().isEmpty(),
   body('lname', 'Last name is required').not().isEmpty(),
   body('email', 'Please provide a valid email').isEmail().normalizeEmail(),
@@ -23,7 +23,7 @@ exports.signupRules = () => [
   }),
 ];
 
-exports.registerSignup = async (req, res, next) => {
+exports.register = async (req, res, next) => {
   const { fname, lname, email, password } = req.body;
   const member = new Member({ firstName: fname, lastName: lname, email });
   await Member.register(member, password); // method from passport-local-mongoose plugin

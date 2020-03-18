@@ -24,10 +24,10 @@ router.get('/beers', (req, res, next) => { res.send('List of Beers!!'); });
 
 router.post('/members/add', memberController.requestMember);
 // todo update route to use a :token param instead of 1234
-router.post('/signup/1234',
-  memberController.signupRules(),
+router.post('/register/1234',
+  memberController.registrationRules(),
   validate,
-  catchErrors(memberController.registerSignup),
+  catchErrors(memberController.register),
   authController.login);
 
 module.exports = router;
