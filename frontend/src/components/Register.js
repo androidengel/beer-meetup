@@ -21,7 +21,7 @@ const Register = (props) => {
           props.history.push('/beers'); // successful login
           // TODO add success message
         } else {
-          props.history.push('/signin');
+          props.history.push('/login');
           // TODO add failure message
         }
       });

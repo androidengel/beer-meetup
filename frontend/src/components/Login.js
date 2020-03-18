@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const Signin = () => {
+const Login = () => {
   const submitForm = () => {
 
   };
 
   return (
     <div className="whole-form">
-      <h2>Sign In</h2>
+      <h2>Login</h2>
       <form className="card" onSubmit={submitForm}>
         <label htmlFor="email">
           Email Address
@@ -18,10 +18,10 @@ const Signin = () => {
           Password
           <input type="password" name="password" required />
         </label>
-        <input type="submit" value="Sign In" className="button" />
+        <input type="submit" value="Login" className="button" />
       </form>
     </div>
   );
 };
 
-export default Signin;
+export default Login;
