@@ -11,3 +11,24 @@ exports.notFound = (req, res, next) => {
   err.status('404');
   next(err);
 };
+
+exports.developmentErrors = (err, req, res, next) => {
+  err.stack = err.stack || '';
+  const errorDetails = {
+    message: err.message,
+    status: err.status,
+    stack: err.stack,
+  };
+  res.status(err.status || 500);
+  res.format({
+    'application/json': () => res.json(errorDetails), // cb required to prevent rewrite of headers after they're sent
+  });
+};
+
+exports.productionErrors = (err, req, res, next) => {
+  res.status(err.status || 500);
+  res.send({
+    message: err.message,
+    error: {},
+  });
+};
