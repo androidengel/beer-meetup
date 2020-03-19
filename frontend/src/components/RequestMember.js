@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const RequestMember = () => (
   <div className="whole-form">
     <h2>New Member Request</h2>
-    <form className="card">
+    <form action="post" className="card">
       <label htmlFor="name">
         New Member Name
         <input type="text" id="name" name="name" required />

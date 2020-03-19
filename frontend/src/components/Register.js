@@ -30,7 +30,7 @@ const Register = (props) => {
   return (
     <div className="whole-form">
       <h2>New Member Registration</h2>
-      <form className="card" onSubmit={submitForm}>
+      <form action="post" className="card" onSubmit={submitForm}>
         <label htmlFor="fname">
             First Name
           <input type="text" name="fname" value={inputs.fname} onChange={handleChange} required />
