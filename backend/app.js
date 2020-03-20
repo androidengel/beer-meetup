@@ -2,6 +2,7 @@ const createError = require('http-errors');
 const express = require('express');
 const expressSession = require('express-session');
 const passport = require('passport');
+const flash = require('connect-flash');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -25,8 +26,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 // after all middleware, handle routes
 app.use('/', router);
