@@ -1,5 +1,6 @@
 const express = require('express');
 const { validationResult } = require('express-validator');
+const passport = require('passport');
 
 const router = express.Router();
 const memberController = require('../controllers/memberController');
@@ -28,6 +29,5 @@ router.post('/register/1234',
   memberController.registrationRules(),
   validate,
   catchErrors(memberController.register),
-  authController.login);
-
+  authController.login());
 module.exports = router;
