@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import useForm from '../lib/useForm';
+import notify from '../lib/notify';
 
 
 const Register = (props) => {
@@ -19,7 +20,7 @@ const Register = (props) => {
       .then((res) => {
         if (res && res.status === 200) {
           props.history.push(res.data.session.cookie.path); // successful login
-          console.log(res.data.session.flash);
+          notify(res.data.session.flash);
           // TODO add success message
         } else {
           props.history.push('/login');

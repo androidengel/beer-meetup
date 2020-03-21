@@ -12,7 +12,6 @@ import MembersPage from '../pages/MembersPage';
 import LoginPage from '../pages/LoginPage';
 import AccountPage from '../pages/AccountPage';
 import RegisterPage from '../pages/RegisterPage';
-import FlashMessages from './FlashMessages';
 
 const HeaderWrapper = styled.div`
   height: 8rem;
@@ -32,19 +31,15 @@ class App extends Component {
   // componentDidMount() {
   //   this.callBackend();
   // }
-  flashes = {
-    success: ["you logged in!"],
-    error: ["you failed to login!", "uh-oh, something went wrong!"]
-  }
+
   render() {
     return (
       <BrowserRouter>
-        {/* <p>{this.state.backendResponse}</p> */}
+]        {/* <p>{this.state.backendResponse}</p> */}
         <HeaderWrapper>
           <Header />
         </HeaderWrapper>
         <Page>
-          <FlashMessages flash={this.flashes} />
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/beers" component={BeersPage} />
