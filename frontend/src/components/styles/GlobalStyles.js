@@ -6,6 +6,7 @@ const theme = {
   red: '#eb1515',
   lightGray: '#cccaca',
   yellow: '#ffcd29',
+  green: '#21cf4f',
   offWhite: '#ededed',
   maxWidth: '1000px',
 };
@@ -90,6 +91,15 @@ const GlobalStyles = createGlobalStyle`
       width: 100%;
       margin: 2rem 2rem 2rem 0;
     }
+  }
+  .success {
+    border-left: 8px solid ${(props) => props.theme.green};
+  }
+  .error {
+    border-left: 8px solid ${(props) => props.theme.red};
+  }
+  .warning {
+    border-left: 8px solid ${(props) => props.theme.yellow};
   }
 `;
 
