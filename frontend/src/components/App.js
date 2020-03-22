@@ -35,7 +35,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-]        {/* <p>{this.state.backendResponse}</p> */}
+        {/* <p>{this.state.backendResponse}</p> */}
         <HeaderWrapper>
           <Header />
         </HeaderWrapper>
