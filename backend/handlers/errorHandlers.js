@@ -23,6 +23,7 @@ exports.developmentErrors = (err, req, res, next) => {
   res.format({
     'application/json': () => res.json(errorDetails), // cb required to prevent rewrite of headers after they're sent
   });
+  // res.send({ error: `errorHandlers.js/developmentErrors -- ${err.message}` });
 };
 
 exports.productionErrors = (err, req, res, next) => {

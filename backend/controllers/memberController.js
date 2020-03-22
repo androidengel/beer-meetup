@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { body } = require('express-validator');
+const { body, validationResult } = require('express-validator');
 
 const Member = mongoose.model('Member');
 
@@ -22,6 +22,19 @@ exports.registrationRules = () => [
     return true;
   }),
 ];
+
+// validation middleware used after applying validation rules in each controller
+exports.validate = (req, res, next) => {
+  const validation = validationResult(req);
+  const { errors } = validation;
+  if (errors.length) {
+    const errMessages = { error: [] };
+    errMessages.error = errors.map((err) => err.msg); // format for toast messaging
+    console.log(errors);
+    return res.status(422).send(errMessages);
+  }
+  next();
+};
 
 exports.register = async (req, res, next) => {
   const { fname, lname, email, password } = req.body;

@@ -18,17 +18,17 @@ const Register = (props) => {
     e.preventDefault();
     axios.post('http://localhost:7777/register/1234', inputs)
       .then((res) => {
+        console.log(`Checking for response: ${res}`);
         if (res && res.status === 200) {
           props.history.push(res.data.session.cookie.path); // successful login
           notify(res.data.session.flash);
-          // TODO add success message
         } else {
           props.history.push('/login');
           // TODO add failure message
           console.log('login failed!');
         }
       })
-      .catch((err) => console.log(err.message));
+      .catch((err) => notify(err.response.data));
   };
 
   return (
